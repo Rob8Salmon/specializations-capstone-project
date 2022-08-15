@@ -1,24 +1,21 @@
 #Wedding Venue Business Website
 MVP
- Users can browse website
- Users can can search gallery 
- users can search videos
- Users can can book venue
- Users can create ac
- 
+Users can browse website
+Users can can search gallery
+users can search videos
+Users can can book venue
+Users can create ac
 
 Pages
- Home Page
- About page
- Packages & Pricing page
- Gallery page
- Date Availability
- Contact
+Home Page
+About page
+Packages & Pricing page
+Gallery page
+Date Availability
+Contact
 
 Database Contains
- Book Venue
-
-
+Book Venue
 
 # Getting Started with Create React App
 

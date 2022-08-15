@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import LoadingScreen from "./LoadingScreen";
+import HomeScreen from "./components/homeScreen/HomeScreen";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
+import Gallery from "./components/gallery/Gallery";
+import PackagesPricing from "./components/packagesPricing/PackagesPricing";
+import Routes from "./components/Routes";
+import NavBar from "./components/NavBar"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+  const [taco, setTaco] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setTaco(false), 8000);
+  }, []);
+  console.log(taco);
+
+  if (taco) {
+    return <LoadingScreen />;
+  } else {
+    return <HomeScreen /> 
+  } 
+};
+
+
 
 export default App;
