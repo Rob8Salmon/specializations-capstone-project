@@ -15,8 +15,6 @@ app.use(cors());
 
 // Endpoints
 
-app.listen(PORT, () => console.log(`It's over ${PORT}!!!`));
-
 const sequelize = new Sequelize(DATABASE_URL, {
   dialect: "postgres",
   dialectOptions: {
@@ -27,19 +25,22 @@ const sequelize = new Sequelize(DATABASE_URL, {
 });
 
 app.post("/addUser", (req, res) => {
-  let { firstname, lastname, email, phonenumber, idealeventdate, message } = req.body;
-
+  let { firstname, lastname, email, phonenumber, date, message } = req.body;
+  console.log(req.body);
   sequelize
     .query(
       `
         INSERT INTO users(firstname, lastname, email, phonenumber, idealeventdate, message)
-        VALUES('${firstname}','${lastname}','${email}','${phonenumber}','${idealeventdate}','${message}');
+        VALUES('${firstname}','${lastname}','${email}','${phonenumber}','${date}','${message}') returning *;
     `
     )
     .then((dbRes) => {
+      console.log(dbRes);
       res.status(200).send(dbRes[0]);
-    });
+    })
+    .catch((err) => console.log("creatUsers function is not  working", err));
 });
 
-app.get()
+const SERVER_PORT = process.env.PORT || 4000;
 
+app.listen(PORT, () => console.log(`It's over ${PORT}!!!`));

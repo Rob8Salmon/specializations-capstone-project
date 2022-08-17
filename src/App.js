@@ -6,8 +6,8 @@ import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Gallery from "./components/gallery/Gallery";
 import PackagesPricing from "./components/packagesPricing/PackagesPricing";
-import Routes from "./components/Routes";
-import NavBar from "./components/NavBar"
+import Router from "./components/Routes";
+import NavBar from "./components/NavBar";
 
 const App = () => {
   const [taco, setTaco] = useState(false);
@@ -19,10 +19,22 @@ const App = () => {
   if (taco) {
     return <LoadingScreen />;
   } else {
-    return <HomeScreen /> 
-  } 
+    return (
+      <div>
+        <NavBar />
+        <Router />
+      </div>
+    ) 
+  }
 };
 
+const contactConfig ={
+  description: 
+    'Lorem ipsum dolor sit amet,....'
+};
 
+export {
+  contactConfig
+}
 
 export default App;

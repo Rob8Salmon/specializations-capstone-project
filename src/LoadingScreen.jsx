@@ -8,7 +8,7 @@ import {
   useLoader,
   useThree,
 } from "@react-three/fiber";
-import circleImg from "./images/react.circle.image.png";
+import circleImg from "./photos/react.circle.image.png";
 import { Suspense, useCallback, useMemo, useRef } from "react";
 extend({ OrbitControls });
 

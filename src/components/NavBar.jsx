@@ -22,15 +22,15 @@ function NavBar() {
       <Link to="/">Emerald Coast Weddings</Link>
       <ul className={active}>
         <li className="nav_item"></li>
-        <Link to="/Home">Home</Link>
+        <Link to="/">Home</Link>
         <li className="nav_item"></li>
         <Link to="/About">About</Link>
         <li className="nav_item"></li>
         <Link to="/Gallery">Gallery</Link>
         <li className="nav_item"></li>
-        <Link to="Packages & Pricing">Packages & Pricing</Link>
+        <Link to="/Packages">Packages & Pricing</Link>
         <li className="nav_item"></li>
-        <Link to="Contact Us">Contact Us</Link>
+        <Link to="/Contact">Contact Us</Link>
       </ul>
 
       <div onClick={navToggle} className={toggleIcon}>
